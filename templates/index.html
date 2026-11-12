@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Calcula tu índice de masa corporal de forma sencilla.">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="page container">
+        <div class="row justify-content-center">
+            <section class="calculator card col-12 col-md-8 col-lg-6" aria-labelledby="page-title">
+                <div class="card-body">
+                    <div class="eyebrow"><span class="dot"></span> BIENESTAR Y SALUD</div>
+                    <h1 id="page-title">Calculadora de <span>IMC</span></h1>
+                    <p class="intro">Conoce tu índice de masa corporal en unos segundos.</p>
+
+                    <form action="{{ url_for('calcular') }}" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="peso">Peso <span>(kg)</span></label>
+                            <div class="input-group">
+                                <input class="form-control" id="peso" name="peso" type="number" min="0.1" step="any"
+                                       placeholder="Ej. 70" value="{{ peso }}" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">kg</span>
+                                </div>
+                                <div class="invalid-feedback">Ingresa un peso mayor que cero.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estatura">Estatura <span>(cm)</span></label>
+                            <div class="input-group">
+                                <input class="form-control" id="estatura" name="estatura" type="number" min="1" step="any"
+                                       placeholder="Ej. 175" value="{{ estatura }}" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">cm</span>
+                                </div>
+                                <div class="invalid-feedback">Ingresa una estatura mayor que cero.</div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success btn-block" type="submit">
+                            Calcular mi IMC <span aria-hidden="true">→</span>
+                        </button>
+                    </form>
+
+                    {% if error %}
+                        <div class="alert alert-danger message" role="alert">{{ error }}</div>
+                    {% endif %}
+
+                    {% if resultado %}
+                        <section class="result alert alert-success" aria-live="polite">
+                            <p class="result-label">Tu resultado</p>
+                            <p class="score">{{ resultado.imc }}</p>
+                            <p class="category">{{ resultado.categoria }}</p>
+                        </section>
+                    {% endif %}
+
+                    <aside class="note">
+                        <strong>Recuerda</strong>
+                        <p>El IMC es una referencia general para adultos y no sustituye la evaluación de un profesional de la salud.</p>
+                    </aside>
+                </div>
+            </section>
+        </div>
+        <footer>Una herramienta sencilla para cuidar de ti.</footer>
+    </main>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

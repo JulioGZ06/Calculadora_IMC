@@ -1,0 +1,200 @@
+:root {
+    color-scheme: light;
+    color: #172a3a;
+    background: #f3f8f6;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 12% 18%, rgba(181, 226, 209, 0.42), transparent 34%),
+        radial-gradient(ellipse at 88% 78%, rgba(198, 226, 235, 0.48), transparent 34%),
+        #f3f8f6;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.calculator {
+    padding: 0;
+    border: 1px solid rgba(220, 232, 228, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 24px 70px rgba(37, 73, 65, 0.11);
+}
+
+.calculator .card-body {
+    padding: 42px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #638274;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #48a782;
+    box-shadow: 0 0 0 4px #e8f5ef;
+}
+
+h1 {
+    margin: 20px 0 8px;
+    color: #172a3a;
+    font-size: clamp(30px, 8vw, 38px);
+    font-weight: 700;
+    letter-spacing: -1.7px;
+    line-height: 1.15;
+}
+
+h1 span {
+    color: #258660;
+}
+
+.intro {
+    margin: 0 0 30px;
+    color: #73827f;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #82918d;
+    font-weight: 400;
+}
+
+.form-control,
+.input-group-text {
+    height: 54px;
+    border-color: #dce7e2;
+}
+
+.form-control {
+    background: #fbfdfc;
+    color: #172a3a;
+}
+
+.form-control::placeholder {
+    color: #a9b5b1;
+}
+
+.form-control:focus {
+    border-color: #48a782;
+    box-shadow: 0 0 0 3px rgba(72, 167, 130, 0.14);
+}
+
+.input-group-text {
+    background: #f3f8f6;
+    color: #71847b;
+}
+
+.invalid-feedback {
+    width: 100%;
+}
+
+.btn-success {
+    min-height: 54px;
+    margin-top: 3px;
+    border-color: #258660;
+    background-color: #258660;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    border-color: #1d7452;
+    background-color: #1d7452;
+}
+
+.result {
+    margin: 25px 0 0;
+    border-color: #d9eee3;
+    border-radius: 14px;
+    background: #f1faf5;
+    color: #172a3a;
+    text-align: center;
+}
+
+.result-label {
+    margin: 0;
+    color: #71847b;
+    font-size: 13px;
+}
+
+.score {
+    margin: 4px 0 0;
+    color: #207d59;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.category {
+    margin: 4px 0 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.message {
+    margin: 18px 0 0;
+    font-size: 14px;
+}
+
+.note {
+    margin-top: 27px;
+    padding-left: 14px;
+    border-left: 3px solid #b9ddcc;
+}
+
+.note strong {
+    color: #587769;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.note p {
+    margin: 5px 0 0;
+    color: #7a8984;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+footer {
+    margin-top: 22px;
+    color: #82918d;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) {
+    .page {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .calculator .card-body {
+        padding: 30px 24px;
+    }
+}
